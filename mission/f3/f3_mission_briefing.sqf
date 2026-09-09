@@ -1,0 +1,1 @@
+// If present, this file will be automatically called by the mod during the briefing phase. It should be used to create diary entries for custom briefing tabs.
