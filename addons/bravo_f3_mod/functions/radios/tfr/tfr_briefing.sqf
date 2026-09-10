@@ -1,5 +1,5 @@
 if (isNull player) then { waitUntil {sleep 0.1; !isNull player}; };
-if (missionNamespace getVariable["f_param_debugMode",0] == 1) then { diag_log text "[F3] DEBUG (tfr_briefing.sqf): Running."; };
+if (missionNamespace getVariable["bravo_f3_mod_param_debugMode",0] == 1) then { diag_log text "[F3] DEBUG (tfr_briefing.sqf): Running."; };
 
 params [["_SRGroups",[]], ["_LRGroups",[]], ["_SRindex",-1], ["_LRindex",0]];
 
@@ -29,20 +29,20 @@ private _lrFreq = missionNamespace getVariable [format["TFAR_defaultFrequencies_
 private _radioText = "<br/><font size='18' color='#80FF00'>RADIO OPERATION</font>";
 
 if (count _SRGroups == 0) exitWith {
-	["tfr_briefing.sqf",format["No groups found in mission\groups.sqf for side %1.",side group player]] call f_fnc_logIssue;
+	["tfr_briefing.sqf",format["No groups found in mission\groups.sqf for side %1.",side group player]] call bravo_f3_mod_fnc_logIssue;
 	diag_log text format["[F3] WARNING (tfr_briefing.sqf): No groups found in mission\groups.sqf for side %1.",side group player];
 };
 
-if (f_radios_settings_disableAllRadios) exitWith {
+if (bravo_f3_mod_radios_settings_disableAllRadios) exitWith {
 	_radioText = _radioText + "<br/>Radios are <font color='#FF0000'>NOT PROVIDED</font> to units as standard kit for this mission.";
 	//player removeDiaryRecord ["Diary", "Signal"];
 	_rad = player createDiaryRecord ["Diary", ["Signal",_radioText]];
 };
 
 // Default any missing TFAR settings.
-private _fRadiosPersonal = missionNamespace getVariable ["f_radios_settings_personalRadio",["leaders"]];
-private _fRadiosRifleman = missionNamespace getVariable ["f_radios_settings_riflemanRadio",["all"]];
-private _fRadiosLongRange = missionNamespace getVariable ["f_radios_settings_longRangeUnits",["leaders"]];
+private _fRadiosPersonal = missionNamespace getVariable ["bravo_f3_mod_radios_settings_personalRadio",["leaders"]];
+private _fRadiosRifleman = missionNamespace getVariable ["bravo_f3_mod_radios_settings_riflemanRadio",["all"]];
+private _fRadiosLongRange = missionNamespace getVariable ["bravo_f3_mod_radios_settings_longRangeUnits",["leaders"]];
 
 if ("all" in _fRadiosPersonal) then {
 	_radioText = _radioText + format["<br/>Standard equipment for all units is a short-range %1 radio.",_pr];
@@ -79,7 +79,7 @@ private _lastSR = 0;
 	
 	if (_SRindex == _forEachIndex) then {
 		_radioText = _radioText + format["<br/>%1: <font color='#777777'>SR Frequency</font> %2Mhz <font color='#00FFFF'>(Channel #1)</font>", (_x select 0), _lastSR];
-		f_tfar_localSRfreq = _lastSR;
+		bravo_f3_mod_tfar_localSRfreq = _lastSR;
 	} else {
 		_radioText = _radioText + format["<br/>%1: <font color='#555555'>SR Frequency %2Mhz</font>", (_x select 0), _lastSR];
 	};
@@ -108,11 +108,11 @@ if (count _fRadiosLongRange > 0) then {
 	_radioText = _radioText + "<br/><br/>Long-range radios are <font color='#FF0000'>NOT PROVIDED</font>.<br/>"; 
 };
 
-if (isNil "f_tfar_localSRfreq") then {
+if (isNil "bravo_f3_mod_tfar_localSRfreq") then {
 	_radioText = _radioText + format["<br/><br/>*** No frequency provided for %1 ***", groupId (group player) ];
 };
 
-if (missionNamespace getVariable["f_param_debugMode",0] == 1) then { diag_log text "[F3] DEBUG (tfr_briefing.sqf): Loaded."; };
+if (missionNamespace getVariable["bravo_f3_mod_param_debugMode",0] == 1) then { diag_log text "[F3] DEBUG (tfr_briefing.sqf): Loaded."; };
 
 //player removeDiaryRecord ["Diary", "Signal"];
 _rad = player createDiaryRecord ["Diary", ["Signal",_radioText]];

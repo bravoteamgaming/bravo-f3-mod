@@ -114,7 +114,7 @@ class Mission
 	assetType="Free";
 	class Intel
 	{
-		overviewText="ZGM Template using a modified 26K Template By BlankFire. / ZGM MOD V1.0 Combined / Template V4.0";
+		overviewText="ZGM Template using a modified 26K Template By BlankFire. Mission version MOD1.0";
 		resistanceWest=0;
 		timeOfChanges=1800.0002;
 		startWeather=0.40000001;
@@ -2183,7 +2183,7 @@ class Mission
 			flags=4;
 			class Attributes
 			{
-				init="call{[this, true] call ace_arsenal_fnc_initBox;};" \n "[""AmmoboxInit"",[this,true]] call BIS_fnc_arsenal;";
+				init="call{[this, true] call ace_arsenal_fnc_initBox;};";
 			};
 			id=1965;
 			type="Box_NATO_AmmoVeh_F";
@@ -2395,7 +2395,7 @@ class Mission
 			flags=4;
 			class Attributes
 			{
-				init="call{[this, true] call ace_arsenal_fnc_initBox;};" \n "[""AmmoboxInit"",[this,true]] call BIS_fnc_arsenal;";
+				init="call{[this, true] call ace_arsenal_fnc_initBox;};";
 			};
 			id=1971;
 			type="Box_NATO_AmmoVeh_F";
@@ -2558,7 +2558,7 @@ class Mission
 			flags=4;
 			class Attributes
 			{
-				init="call{[this, true] call ace_arsenal_fnc_initBox;};" \n "[""AmmoboxInit"",[this,true]] call BIS_fnc_arsenal;";
+				init="call{[this, true] call ace_arsenal_fnc_initBox;};";
 			};
 			id=1972;
 			type="Box_NATO_AmmoVeh_F";
@@ -2791,7 +2791,7 @@ class Mission
 			flags=4;
 			class Attributes
 			{
-				init="if (!(isServer)) exitWith {};     " \n "    [this,[""Audit Grenades"",{_0 = [true,""f\auditGrenades.sqf""] remoteExec [""execVM"",0,false];}, nil, 6, true, true, """", ""true"", 3, false, """", """"]]";
+				init="";
 			};
 			id=1976;
 			type="MapBoard_seismic_F";

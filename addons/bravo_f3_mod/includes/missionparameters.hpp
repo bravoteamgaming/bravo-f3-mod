@@ -75,13 +75,6 @@ class bravo_f3_mod_param_medical
 	texts[] = {"Automatic","Vanilla","Farooq Revive"};
 	default = -1;
 };
-class bravo_f3_mod_param_thirdPerson
-{
-	title = "Third Person";
-	values[] = {0,1,2};
-	texts[] = {"No Restriction","In Vehicles Only","First Person Only"};
-	default = 1;
-};
 class bravo_f3_mod_param_respawn
 {
 	title = "Respawn";

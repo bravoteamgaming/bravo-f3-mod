@@ -20,7 +20,6 @@ bravo_f3_mod_sqf_safe = spawn bravo_f3_mod_fnc_safeStart; 	// F3 - Safe Start
 // ====================================================================================
 // SERVER ONLY SCRIPTS!
 if isServer then {
-	spawn bravo_f3_mod_fnc_setGroupIDs;
 	spawn bravo_f3_mod_fnc_stayInVehicle;
 	
 	// Clear DCd player bodies at start
@@ -46,18 +45,10 @@ if isServer then {
 // ====================================================================================
 // CLIENT ONLY SCRIPTS - Typically controlled via MISSION PARAMETERS.
 if hasInterface then { 
-	bravo_f3_mod_sqf_draw = spawn bravo_f3_mod_fnc_drawAO;
+
 	bravo_f3_mod_sqf_intro = spawn bravo_f3_mod_fnc_clientIntro;
-	bravo_f3_mod_sqf_ftmk = spawn bravo_f3_mod_fnc_setTeamColours;
-	bravo_f3_mod_sqf_grpm = spawn bravo_f3_mod_fnc_setLocGroupMkr;
-	bravo_f3_mod_sqf_third = spawn bravo_f3_mod_fnc_thirdPerson;
-	bravo_f3_mod_sqf_vas = spawn bravo_f3_mod_fnc_vas;
 	bravo_f3_mod_sqf_jip = spawn bravo_f3_mod_fnc_teleportOption;
 	bravo_f3_mod_sqf_brief = spawn bravo_f3_mod_fnc_briefing;
-	bravo_f3_mod_sqf_orbat = spawn bravo_f3_mod_fnc_showOrbat;
-	bravo_f3_mod_sqf_gearSel = spawn bravo_f3_mod_fnc_showLoadoutSelect;
 	bravo_f3_mod_sqf_earp = spawn bravo_f3_mod_fnc_earplugs;
 	bravo_f3_mod_sqf_names = spawn bravo_f3_mod_fnc_nametags;
-	bravo_f3_mod_sqf_ftmrk = spawn bravo_f3_mod_fnc_initFTMarkers;
-	bravo_f3_mod_sqf_skill = spawn bravo_f3_mod_fnc_setAISkill;
 };

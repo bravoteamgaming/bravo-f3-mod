@@ -1,24 +1,14 @@
 // MISSION VARAIBLES
-bravo_f3_mod_param_groupMarkers = 0; 		// 0 = Disable, 1 = On Map, 2 = On Map + Screen, 3 = Map + Squad Stats, 4 = Commander Map Only, 5 = Commander Map + Squad Stats
+
 //setApertureNew [1.5, 8, 14, 1]; // Less Dark Night
-//f_var_fogOverride = [[0,0,0],[0.1,0.005,100],[0.9,0.0155,0],[0.1,random 0.02,100]]; // Override default fog settings [[none],[Light],[heavy],[rand]].
+//bravo_f3_mod_var_fogOverride = [[0,0,0],[0.1,0.005,100],[0.9,0.0155,0],[0.1,random 0.02,100]]; // Override default fog settings [[none],[Light],[heavy],[rand]].
 // ====================================================================================
 // F3 - Casualty Cap - Sides: west | east | resistance - Format: [SIDE,ENDING,<PERCENT>]
-// [nil, 2] execVM "f\casualtiesCap\f_CasualtiesCapCheck.sqf";
+// [nil, 2] spawn bravo_f3_mod_fnc_casualtiesCapCheck;
 // ====================================================================================
 // F3 - Map Click Teleport - [NoOfUses,ActionTimeOut,["UnitsToGiveAction"],TeleportHeight]
-// [1,600,true,[],3000] execVM "f\mapClickTeleport\f_mapClickTeleportAction.sqf";	// Teleport Group, Leaders Only, Set for HALO (3000m Height)
-// [] execVM "f\mapClickTeleport\f_mapClickTeleportAction.sqf";						// Use Defaults (Teleport Group, Leaders Only, Land Teleport)
-// ====================================================================================
-// [RESISTANCE,"acc_flashlight"] execVM "scripts\flashLight.sqf";	// AI Flashlights
-// DAC_Basic_Value = 0; execVM "scripts\DAC\DAC_Config_Creator.sqf";	// DAC
-// [] execVM "scripts\civPopulation.sqf";	// Civ Spawner
-// [] execVM "scripts\z_ambientUnits.sqf";	// Ambient Infantry
-// ====================================================================================
-// Hardcore Settings:
-// FAR_var_DeathMessages = false; // Disable TK Messages
-// f_var_ShowFTMarkers = false; // Disable FT Markers
-// [] spawn { sleep 1; f_param_groupMarkers = 0; setGroupIconsVisible [false, false]; tao_foldmap_isOpen = true; ZEU_tkLog_mpKilledEH = {}; };
+// [1,600,true,[],3000] spawn bravo_f3_mod_fnc_mapClickTeleportAction;	// Teleport Group, Leaders Only, Set for HALO (3000m Height)
+// [] spawn bravo_f3_mod_fnc_mapClickTeleportAction;						// Use Defaults (Teleport Group, Leaders Only, Land Teleport)
 // ====================================================================================
 // Remove Enemy weapons on death
 /* if isServer then {

@@ -23,7 +23,6 @@ class CfgFunctions
 			class briefing_admin{};
 			class drawAO{};
 			class showLoadoutSelect{};
-			class showOrbat{};
 			class fillAdministration{};
 		};
 		class JIP
@@ -49,14 +48,6 @@ class CfgFunctions
 				postInit = 1;
 			};
 			class spectateInit{};
-		};
-		class medical
-		{
-			file = "\bravo_f3_mod\functions\medical";
-			class medical_init
-			{
-				postInit = 1;
-			};
 		};
 		class radios
 		{
@@ -95,17 +86,6 @@ class CfgFunctions
 			class setWeather{};
 			class setWind{};
 		};
-		class FTMemberMarkers
-		{
-			file = "\bravo_f3_mod\functions\FTMemberMarkers";
-			class initFTMarkers{};
-		};
-		class groupMarkers
-		{
-			file = "\bravo_f3_mod\functions\groupMarkers";
-			class setLocGroupMkr{};
-			class localGroupMarker{};
-		};
 		class mapClickTeleport
 		{
 			file = "\bravo_f3_mod\functions\mapClickTeleport";
@@ -121,7 +101,6 @@ class CfgFunctions
 			class pylons{};
 			class stayInVehicle{};
 			class teleportPlayer{};
-			class vas{};
 			class virtualGarage{};
 		};
 		class nametag
@@ -136,32 +115,6 @@ class CfgFunctions
 			class safeStart{};
 			class safeStartLoop{};
 			class safety{};
-		};
-		class setAISkill
-		{
-			file = "\bravo_f3_mod\functions\setAISkill";
-			class setAISkill{};
-		};
-		class setGroupID
-		{
-			file = "\bravo_f3_mod\functions\setGroupID";
-			class setGroupIDs{};
-		};
-		class setTeamColours
-		{
-			file = "\bravo_f3_mod\functions\setTeamColours";
-			class setTeamColours{};
-		};
-		class thirdPerson
-		{
-			file = "\bravo_f3_mod\functions\thirdPerson";
-			class thirdPerson{};
-		};
-		class ace
-		{
-			file = "\bravo_f3_mod\functions\ace";
-			class ace_clientInit{};
-			class ace_medicalConverter{};
 		};
 	};
 };

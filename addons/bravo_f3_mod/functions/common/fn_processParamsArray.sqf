@@ -94,18 +94,6 @@ if (isNil "bravo_f3_mod_var_setParams") then {
 				};
 			};
 		};
-			
-		// Add Zeus administrators for client-side comparison
-		if (!isNil "ZEU_ADMIN_fGetPlayerRegister") then {
-			_playerRegister = [] call ZEU_ADMIN_fGetPlayerRegister;
-		
-			// Make sure array was returned
-			if (_playerRegister isEqualType []) then {
-				if (count _playerRegister > 1) then {
-					missionNamespace setVariable ["f_zeusAdminNames",(_playerRegister select 1),true];
-				};
-			};
-		};
 		
 		// Load and send all groups to clients
 		if (fileExists "f3\f3_mission_groups.sqf") then {

@@ -3,22 +3,22 @@
 
 // SHARED SETTINGS (ACRE / TFAR / VANILLA)
 // Should any radios should be assigned at all, to anyone?
-f_radios_settings_disableAllRadios = false;
+bravo_f3_mod_radios_settings_disableAllRadios = false;
 
 // Unit types you want to give a long-range
 // e.g: ["co","dc","pp","pc","pcc","vc","vd","vg"] would give the CO, FTLs and all medics long-range
- f_radios_settings_longRangeUnits = []; // ["co","ftl","vc","pp"];
+bravo_f3_mod_radios_settings_longRangeUnits = []; // ["co","ftl","vc","pp"];
 
 // Set the list of units that get a personal/short-range radio e.g. "co","dc","ftl","pp"
 // Undefined will assign to ALL by default, below gives any leader a PR
- f_radios_settings_personalRadio = [];
+bravo_f3_mod_radios_settings_personalRadio = [];
 
 // Set the list of units that get a rifleman's/basic radio
 // Undefined will assign to all by default or leave empty array for no radios.
-f_radios_settings_riflemanRadio = [];
+bravo_f3_mod_radios_settings_riflemanRadio = [];
 
 // Set custom LR Nets if required (LR otherwise determined by 'groups.sqf').
-f_radios_settings_longRangeGroups = ["Company", "Platoon 1", "Platoon 2", "Air", "Support","NEUTRAL"]; // "NEUTRAL" is shared in ACRE.
+bravo_f3_mod_radios_settings_longRangeGroups = ["Company", "Platoon 1", "Platoon 2", "Air", "Support","NEUTRAL"]; // "NEUTRAL" is shared in ACRE.
 
 // If a backpack is to be assigned, use this class.
 //f_radios_WESTBackpack = "tf_rt1523g_black";
@@ -30,13 +30,13 @@ f_radios_settings_longRangeGroups = ["Company", "Platoon 1", "Platoon 2", "Air",
 // ====================================================================================
 
 // Any units that get a PRC117F radio e.g. "co", "pp"
-f_radios_settings_acre2_extraRadios = [];
+bravo_f3_mod_radios_settings_acre2_extraRadios = [];
 
 // Whether or not the radio frequencies should be shared as default. TRUE = Frequency separation across sides.
-f_radios_settings_acre2_SplitFrequencies = TRUE;
+bravo_f3_mod_radios_settings_acre2_SplitFrequencies = TRUE;
 
 // Babel - Defines the languages that exist in the mission.
-f_radios_settings_acre2_languages = [
+bravo_f3_mod_radios_settings_acre2_languages = [
 	["en","English"],
 	["ru","Russian"],
 	["gr","Greek"],
@@ -45,11 +45,11 @@ f_radios_settings_acre2_languages = [
 ];
 
 // Babel - Defines the language that a player can speak. Can define multiple.
-f_radios_settings_acre2_language_west = ["en"];
-f_radios_settings_acre2_language_east = ["ru"];
-f_radios_settings_acre2_language_guer = ["ar"];
+bravo_f3_mod_radios_settings_acre2_language_west = ["en"];
+bravo_f3_mod_radios_settings_acre2_language_east = ["ru"];
+bravo_f3_mod_radios_settings_acre2_language_guer = ["ar"];
 
 // ACRE - Radio Types
-f_radios_settings_acre2_standardSRRadio = "ACRE_PRC152"; // Standard Short
-f_radios_settings_acre2_standardLRRadio = "ACRE_PRC117F"; // Standard LongRange
-f_radios_settings_acre2_extraRadio = "ACRE_PRC152"; // Extra Radio
+bravo_f3_mod_radios_settings_acre2_standardSRRadio = "ACRE_PRC152"; // Standard Short
+bravo_f3_mod_radios_settings_acre2_standardLRRadio = "ACRE_PRC117F"; // Standard LongRange
+bravo_f3_mod_radios_settings_acre2_extraRadio = "ACRE_PRC152"; // Extra Radio

@@ -19,9 +19,6 @@ enableDebugConsole[] = {
 	#include "\bravo_f3_mod\includes\missionsettings.hpp"
 #endif
 
-// CBA
-cba_settings_hasSettingsFile = 1;
-
 bravo_is_f3_mission = 1;
 
 class Params
@@ -41,12 +38,6 @@ class CfgDebriefing
 class CfgNotifications {
 	#if __has_include ("\bravo_f3_mod\includes\notifications.hpp")
 		#include "\bravo_f3_mod\includes\notifications.hpp"
-	#endif
-};
-
-class CfgRemoteExec {
-	#if __has_include ("\bravo_f3_mod\includes\remoteExec.hpp")
-		#include "\bravo_f3_mod\includes\remoteExec.hpp"
 	#endif
 };
 

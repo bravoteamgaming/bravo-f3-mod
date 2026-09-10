@@ -2,16 +2,16 @@
 // * Mission must be coop if using channels defined in radios.sqf
 // * Group leads can auto-join channels when the channel name is added at the end of the group line in groups.sqf
 
-// Set the radio mode with 'f_param_radioMode'
+// Set the radio mode with 'bravo_f3_mod_param_radioMode'
 // 0 = free - Any player can join any channel.
 // 1 = restricted - Need backpack or vehicle to join a channel.
-// 'f_radios_backpack' has allowed radio backpack class or override with 'f_radios_<SIDE>backpack' for different sides in one mission.
-// 'f_radios_settings_longRangeUnits' in radios.sqf has allowed radio backpack unit types (e.g. ['leaders'] or ['co','dc'] etc...
+// 'bravo_f3_mod_radios_backpack' has allowed radio backpack class or override with 'bravo_f3_mod_radios_<SIDE>backpack' for different sides in one mission.
+// 'bravo_f3_mod_radios_settings_longRangeUnits' in radios.sqf has allowed radio backpack unit types (e.g. ['leaders'] or ['co','dc'] etc...
 
-if (isNil "f_param_radioMode" && isServer) then { missionNamespace setVariable ["f_param_radioMode", 0, true] };
+if (isNil "bravo_f3_mod_param_radioMode" && isServer) then { missionNamespace setVariable ["bravo_f3_mod_param_radioMode", 0, true] };
 
 // Start set up for client
-[] execVM "f\radios\vanilla\vanilla_client.sqf";
+[] execVM "\bravo_f3_mod\functions\radios\vanilla\vanilla_client.sqf";
 
 // Set up the server radio channels (server ONLY)
 if !isServer exitWith {};
@@ -20,7 +20,7 @@ if !isServer exitWith {};
 	private _tempArr = [];
 	_x params ["_chSide"]; 
 	
-	_chGroups = missionNamespace getVariable [format["f_var_groups%1", _chSide], []];
+	_chGroups = missionNamespace getVariable [format["bravo_f3_mod_var_groups%1", _chSide], []];
 	
 	// Loop each group in the list.
 	{
@@ -39,7 +39,7 @@ if !isServer exitWith {};
 				if (_channelID != 0) then {
 					_tempArr pushBack [_customCh, _channelID, (_color call BIS_fnc_colorRGBAtoHTML), [_grpName]];
 				} else {
-					["radios\custom_init.sqf",format["Create Channel '%1' (%2) Failed! Only 8 Channels are supported", _customCh, _chSide],"ERROR"] call f_fnc_logIssue;
+					["radios\custom_init.sqf",format["Create Channel '%1' (%2) Failed! Only 8 Channels are supported", _customCh, _chSide],"ERROR"] call bravo_f3_mod_fnc_logIssue;
 				};
 			};
 		};
@@ -47,7 +47,7 @@ if !isServer exitWith {};
 	
 	// If no custom channels were specified and the game-type is coop only, generate automatically.
 	if (count _tempArr == 0 && count _chGroups > 0 && toUpper (getText ((getMissionConfig "Header") >> "gameType")) == "COOP" && playableSlotsNumber _chSide > 0) then {
-		if (count (missionNamespace getVariable ["f_radios_settings_longRangeGroups",[]]) > 0) then {
+		if (count (missionNamespace getVariable ["bravo_f3_mod_radios_settings_longRangeGroups",[]]) > 0) then {
 			{	
 				_chName = _x + " Channel";
 				
@@ -60,15 +60,15 @@ if !isServer exitWith {};
 				if (_channelID != 0) then {
 					_tempArr pushBack [_chName, _channelID, (_chColor call BIS_fnc_colorRGBAtoHTML), []];
 				} else {
-					["radios\custom_init.sqf",format["Create Channel '%1' (%2) Failed! Only 8 Channels are supported", _x, _chSide],"ERROR"] call f_fnc_logIssue;
+					["radios\custom_init.sqf",format["Create Channel '%1' (%2) Failed! Only 8 Channels are supported", _x, _chSide],"ERROR"] call bravo_f3_mod_fnc_logIssue;
 				};
-			} forEach f_radios_settings_longRangeGroups;
+			} forEach bravo_f3_mod_radios_settings_longRangeGroups;
 		};
 	};
 	
 	// Store channel info into public variable.
-	missionNamespace setVariable [format["f_var_ch%1",_chSide], _tempArr, true];
+	missionNamespace setVariable [format["bravo_f3_mod_var_ch%1",_chSide], _tempArr, true];
 } forEach [west, east, independent, civilian];
 
 // Set-up completed
-missionNamespace setVariable ["f_var_customRadio", true, true];
+missionNamespace setVariable ["bravo_f3_mod_var_customRadio", true, true];
