@@ -20,7 +20,7 @@ private ["_unitSide","_incAdmin","_uidList"];
 // it in the private variable _unitSide
 
 _incAdmin = false;
-_uidList = ["76561197970695190"]; // 2600K
+_uidList = getArray (missionConfigFile >> "enableDebugConsole");
 
 // BRIEFING: ADMIN
 // The following block of code executes only if the player is the current host
@@ -29,13 +29,6 @@ _uidList = ["76561197970695190"]; // 2600K
 // Get Author ID if present
 if (!isNil "bravo_f3_mod_var_AuthorUID") then {
 	_uidList pushBackUnique bravo_f3_mod_var_AuthorUID;
-};
-
-// Get Server Admin List if present (f_zeusAdminNames from f\common\fn_processParamsArray.sqf)
-if (!isNil "bravo_f3_mod_zeusAdminNames") then {
-	if (bravo_f3_mod_zeusAdminNames isEqualType []) then {
-		_uidList append bravo_f3_mod_zeusAdminNames;
-	};
 };
 
 // Check if player is authorised admin (or 2600K) ;)
