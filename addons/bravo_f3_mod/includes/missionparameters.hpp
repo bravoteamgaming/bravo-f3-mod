@@ -103,3 +103,10 @@ class bravo_f3_mod_param_ZMMDiff
 	texts[] = {"Disabled", "Enabled"};
 	default = 0;
 };
+class bravo_f3_mod_param_engineArtillery
+{
+	title = "Artillery computer";
+	values[] = {0,1};
+	texts[] = {"Disabled", "Enabled"};
+	default = 0;
+};

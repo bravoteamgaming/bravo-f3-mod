@@ -1,11 +1,4 @@
 // MISSION VARAIBLES
-player addRating 100000;
-[player, "NoVoice"] remoteExec ["setSpeaker", -2, format["NoVoice_%1", netId player]]; // No player voice
-showSubtitles false; // No radio calls
-"Group" setDynamicSimulationDistance 1200;
-"Vehicle" setDynamicSimulationDistance 2500;
-enableEngineArtillery false; 	// Disable Artillery Computer
-onMapSingleClick "_shift";	// Disable Map Clicking
 bravo_f3_mod_param_groupMarkers = 0; 		// 0 = Disable, 1 = On Map, 2 = On Map + Screen, 3 = Map + Squad Stats, 4 = Commander Map Only, 5 = Commander Map + Squad Stats
 //setApertureNew [1.5, 8, 14, 1]; // Less Dark Night
 //f_var_fogOverride = [[0,0,0],[0.1,0.005,100],[0.9,0.0155,0],[0.1,random 0.02,100]]; // Override default fog settings [[none],[Light],[heavy],[rand]].

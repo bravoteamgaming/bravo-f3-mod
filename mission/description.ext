@@ -1,23 +1,23 @@
 // Authority
-#if __has_include("\bravo_f3_mod\missioninfo.hpp")
-	#include "\bravo_f3_mod\missioninfo.hpp"
+#if __has_include("\bravo_f3_mod\includes\missioninfo.hpp")
+	#include "\bravo_f3_mod\includes\missioninfo.hpp"
 #endif
 
 // CONSOLE
 enableDebugConsole[] = {
-	#if __has_include("\bravo_f3_mod\admins_ids.hpp")
-		#include "\bravo_f3_mod\admins_ids.hpp"
+	#if __has_include("\bravo_f3_mod\includes\admins_ids.hpp")
+		#include "\bravo_f3_mod\includes\admins_ids.hpp"
 	#endif
 };
 
 
-#if __has_include("\bravo_f3_mod\missionrespawn.hpp")
-		#include "\bravo_f3_mod\missionrespawn.hpp"
-	#endif
+#if __has_include("\bravo_f3_mod\includes\missionrespawn.hpp")
+	#include "\bravo_f3_mod\includes\missionrespawn.hpp"
+#endif
 
-#if __has_include("\bravo_f3_mod\missionsettings.hpp")
-		#include "\bravo_f3_mod\missionsettings.hpp"
-	#endif
+#if __has_include("\bravo_f3_mod\includes\missionsettings.hpp")
+	#include "\bravo_f3_mod\includes\missionsettings.hpp"
+#endif
 
 // CBA
 cba_settings_hasSettingsFile = 1;
@@ -26,14 +26,30 @@ bravo_is_f3_mission = 1;
 
 class Params
 {
-	#if __has_include("\bravo_f3_mod\missionparameters.hpp")
-			#include "\bravo_f3_mod\missionparameters.hpp"
-		#endif
+	#if __has_include("\bravo_f3_mod\includes\missionparameters.hpp")
+		#include "\bravo_f3_mod\includes\missionparameters.hpp"
+	#endif
 };
 
 class CfgDebriefing
 {
-	#if __has_include("\bravo_f3_mod\missionendings.hpp")
-			#include "\bravo_f3_mod\missionendings.hpp"
-		#endif
+	#if __has_include("\bravo_f3_mod\includes\missionendings.hpp")
+		#include "\bravo_f3_mod\includes\missionendings.hpp"
+	#endif
 };
+
+class CfgNotifications {
+	#if __has_include ("\bravo_f3_mod\includes\notifications.hpp")
+		#include "\bravo_f3_mod\includes\notifications.hpp"
+	#endif
+};
+
+class CfgRemoteExec {
+	#if __has_include ("\bravo_f3_mod\includes\remoteExec.hpp")
+		#include "\bravo_f3_mod\includes\remoteExec.hpp"
+	#endif
+};
+
+#if __has_include ("\bravo_f3_mod\includes\controls.hpp")
+	#include "\bravo_f3_mod\includes\controls.hpp"
+#endif

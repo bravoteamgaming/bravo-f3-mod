@@ -157,5 +157,11 @@ class CfgFunctions
 			file = "\bravo_f3_mod\functions\thirdPerson";
 			class thirdPerson{};
 		};
+		class ace
+		{
+			file = "\bravo_f3_mod\functions\ace";
+			class ace_clientInit{};
+			class ace_medicalConverter{};
+		};
 	};
 };

@@ -108,7 +108,7 @@ if (_typeofUnit == "") then {
 		// If the class is not in the _unitClasses array
 		if (!_known) then {
 			_typeofUnit = "r";
-			["fn_assignGear.sqf",format["Could not auto-identify gear for %1 %2. Ensure you are using vanilla units (NATO/CSAT/AAF) for players!", _unit, typeOf _unit]] call f_fnc_logIssue;
+			["fn_assignGear.sqf",format["Could not auto-identify gear for %1 %2. Ensure you are using vanilla units (NATO/CSAT/AAF) for players!", _unit, typeOf _unit]] call bravo_f3_mod_fnc_logIssue;
 		};
 	} else {
 		if (_unit isKindOf "Thing") then {
@@ -127,7 +127,9 @@ _unit setVariable ["bravo_f3_mod_var_assignGear",_typeofUnit, true];
 _unit setVariable ["bravo_f3_mod_var_assignGear_done", false];
 
 // Defined Loadouts for the Factions - YOU CAN DEFINE EACH FACTIONS GEAR IN THIS!
-#include "..\..\mission\loadout\assignedLoadouts.sqf";
+if (fileExists "loadouts\assignedLoadouts.sqf") then {
+	call compile preprocessFileLineNumbers "loadouts\assignedLoadouts.sqf";
+};
 
 _f_fnc_parseGear = {
 	params ["_varName","_gearArray",["_cfgFile","CfgMagazines"]];
