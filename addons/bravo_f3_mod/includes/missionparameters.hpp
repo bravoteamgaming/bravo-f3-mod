@@ -38,7 +38,7 @@ class bravo_f3_mod_param_fog
 	title = "Fog";
 	values[] = {0,1,2,3,4};
 	texts[] = {"Mission Default","None","Light","Heavy","Random"};
-	default = 10;
+	default = 1;
 };
 class bravo_f3_mod_param_timeOfDay
 {
