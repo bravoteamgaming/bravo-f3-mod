@@ -31,21 +31,21 @@ class bravo_f3_mod_param_weather
 	title = "Weather";
 	values[] = {0,1,2,3,4,5,6,7};
 	texts[] = {"Mission Default","Calm","Light Cloud","Overcast","Light Rain","Rain","Storm","Random"};
-	default = 1;
+	default = 0;
 };
 class bravo_f3_mod_param_fog
 {
 	title = "Fog";
 	values[] = {0,1,2,3,4};
 	texts[] = {"Mission Default","None","Light","Heavy","Random"};
-	default = 1;
+	default = 10;
 };
 class bravo_f3_mod_param_timeOfDay
 {
 	title = "Time of Day";
 	values[] = {0,1,2,3,4,5,6,7,8,9,10,11,12,13,14};
 	texts[] = {"Mission Default","1hr to First Light","30m to First Light","First Light","30m after First Light","Morning","Late Morning","Noon","Afternoon","1hr to Last Light","30m to Last Light","Last Light","Night","Midnight","Random"};
-	default = 8;
+	default = 0;
 };
 class bravo_f3_mod_param_timeMultiplier
 {
